@@ -1,0 +1,2 @@
+def numOfBurgers(tomatoSlices, cheeseSlices):
+
