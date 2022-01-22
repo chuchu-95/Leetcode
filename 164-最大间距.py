@@ -1,12 +1,12 @@
 class Bucket:
-        def __init__(self):
-            self.maxBuck = 0
-            self.minBuck = float('inf')
-        def rewrite(self, num):
-            self.maxBuck = max(self.maxBuck, num)
-            self.minBuck = min(self.minBuck, num)
+    def __init__(self):
+        self.maxBuck = 0
+        self.minBuck = float('inf')
+    def rewrite(self, num):
+        self.maxBuck = max(self.maxBuck, num)
+        self.minBuck = min(self.minBuck, num)
 class Solution:
-    def maximumGap(self, nums: List[int]) -> int:
+    def maximumGap(self, nums) -> int:
         # bucket
         numsLen = len(nums)
         if nums == None or numsLen < 2:

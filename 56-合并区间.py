@@ -32,7 +32,7 @@
 #                         right.append(lst)
 #             return self.quickSort(left) + [pivot] + self.quickSort(right)
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+    def merge(self, intervals):
         idx = 0
         res = []
         start = []

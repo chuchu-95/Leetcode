@@ -1,5 +1,5 @@
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def groupAnagrams(self, strs) :
         dic = {}
         for st in strs:
             lst_st = list(st)

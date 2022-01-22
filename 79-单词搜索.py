@@ -1,5 +1,5 @@
 class Solution: 
-    def exist(self, board: list[list[str]], word: str) -> bool:
+    def exist(self, board, word: str) -> bool:
         dir_row = [-1, 0, 1, 0]
         dir_col = [0, -1, 0, 1]
         for i in range(len(board)):

@@ -260,4 +260,46 @@ strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
 # print(chr(65))
 
 # print(float('inf')>100000000000000000000000000000000)
-d
+# def spiralOrder(matrix):
+#     row = len(matrix)
+#     col = len(matrix[0])
+#     if row == 1:
+#         return matrix[0]
+    
+#     nums = col * row
+#     res = []
+#     i, j = 0, 0
+#     cntI, cntJ = 0, 0
+#     stepX, stepY = 0, 1
+#     direct = 1
+#     cir = 0
+#     for n in range(nums):
+#         #change direction
+#         res.append(matrix[i][j])
+        
+#         if cntI == row -1 or cntJ == col - 1:
+#             stepX, stepY = stepY, stepX
+#             cir += 1
+#             cntI, cntJ = 0, 0
+#             if cir == 2:
+#                 direct *= -1
+#             elif cir == 3:
+#                 row -= 1
+#                 col -= 1
+#             elif cir == 4:
+#                 cir = 0
+#                 direct *= -1
+        
+#         i += stepX * direct
+#         j += stepY * direct
+        
+#         cntI += stepX
+#         cntJ += stepY
+        
+#     return res
+            
+# print(spiralOrder([[3],[2],[3],[2]]))
+
+x = "a"
+print(ord("A"))
+
