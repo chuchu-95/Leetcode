@@ -24,31 +24,54 @@
 #             current.next = copy
 #         return node.next
 
-class Solution:
-    def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
-        node = ListNode(0)
-        node.next = head
-        pre = node
-        while pre:
-            pre = self.reversePart(pre, k)
-        return node.next
+# class Solution:
+#     def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
+#         node = ListNode(0)
+#         node.next = head
+#         pre = node
+#         while pre:
+#             pre = self.reversePart(pre, k)
+#         return node.next
 
-    def reversePart(self, pre, k):
-        # move to k+1 index as last point
-        cnt = 0
-        last = pre
-        while cnt < k+1 and last != None:
-            last = last.next
-            cnt += 1
-        if cnt != k+1 and last == None:
-            return None
-        # reverse
-        end = pre.next
-        cur = pre.next.next
-        while cur != last:
-            nt = cur.next
-            cur.next = pre.next
-            pre.next = cur
-            end.next = nt
-            cur = nt
-        return end  
+#     def reversePart(self, pre, k):
+#         # move to k+1 index as last point
+#         cnt = 0
+#         last = pre
+#         while cnt < k+1 and last != None:
+#             last = last.next
+#             cnt += 1
+#         if cnt != k+1 and last == None:
+#             return None
+#         # reverse
+#         end = pre.next
+#         cur = pre.next.next
+#         while cur != last:
+#             nt = cur.next
+#             cur.next = pre.next
+#             pre.next = cur
+#             end.next = nt
+#             cur = nt
+#         return end  
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        endNode = head
+        for i in range(k):
+            if not endNode:
+                return head
+            endNode = endNode.next
+        preNode = None
+        nxtNode = None
+        curNode = head
+        while curNode != endNode:
+            nxtNode = curNode.next
+            curNode.next = preNode
+            preNode = curNode
+            curNode = nxtNode
+        # after reverse, head is the end of the part
+        head.next = self.reverseKGroup(curNode, k)
+        return preNode

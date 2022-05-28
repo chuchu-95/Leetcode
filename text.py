@@ -158,7 +158,7 @@
 # s = "".join(lst_strs)
 # print(s)
 
-strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+#strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
 # dic = {}
 # for st in strs:
 #     lst_st = list(st)
@@ -298,8 +298,4 @@ strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
         
 #     return res
             
-# print(spiralOrder([[3],[2],[3],[2]]))
-
-x = "a"
-print(ord("A"))
-
+print(-2%2)
